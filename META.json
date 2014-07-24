@@ -1,5 +1,5 @@
 {
-   "abstract" : "Blah blah blah",
+   "abstract" : "API 2Captcha.com",
    "author" : [
       "Fayland Lam <fayland@gmail.com>"
    ],
@@ -59,6 +59,6 @@
          "web" : "https://github.com/fayland/perl-WebService-2Captcha"
       }
    },
-   "version" : "0.01"
+   "version" : "0.02"
 }
 

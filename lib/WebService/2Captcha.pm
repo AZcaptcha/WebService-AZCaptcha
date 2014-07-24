@@ -2,7 +2,7 @@ package WebService::2Captcha;
 
 use strict;
 use 5.008_005;
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 use Carp 'croak';
 use LWP::UserAgent;
@@ -151,7 +151,7 @@ __END__
 
 =head1 NAME
 
-WebService::2Captcha - Blah blah blah
+WebService::2Captcha - API 2Captcha.com
 
 =head1 SYNOPSIS
 
