@@ -29,4 +29,4 @@ resources:
   bugtracker: https://github.com/fayland/perl-WebService-2Captcha/issues
   homepage: https://github.com/fayland/perl-WebService-2Captcha
   repository: https://github.com/fayland/perl-WebService-2Captcha.git
-version: 0.02
+version: 0.03
