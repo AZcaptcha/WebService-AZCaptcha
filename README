@@ -1,68 +1,68 @@
 NAME
-    WebService::AZcaptcha - API azcaptcha.com
+    WebService::AZCaptcha - API azcaptcha.com
 
 SYNOPSIS
-        use WebService::2Captcha;
+        use WebService::AZCaptcha;
 
-        my $w2c = WebService::2Captcha->new(
+        my $azc = WebService::AZCaptcha->new(
             key => '......', # from https://azcaptcha.com/setting
         );
 
-        my $b = $w2c->getbalance() or die $w2c->errstr;
+        my $b = $azc->getbalance() or die $azc->errstr;
         print "Balance: $b\n";
 
-        my $res = $w2c->decaptcha("$Bin/captcha.png", language => 1) or die $w2c->errstr;
+        my $res = $azc->decaptcha("$Bin/captcha.png", language => 1) or die $azc->errstr;
         print "Got text as " . $res->{text} . "\n";
         if (0) {
-            $w2c->reportbad($res->{id}) or die $w2c->errstr;
+            $azc->reportbad($res->{id}) or die $azc->errstr;
         }
 
 DESCRIPTION
-    WebService::2Captcha is for <https://azcaptcha.com/setting>
+    WebService::AZCaptcha is for <https://azcaptcha.com/setting>
 
 METHODS
   decaptcha
-        my $res = $w2c->decaptcha($filename_or_file_content) or die $w2c->errstr;
-        my $res = $w2c->decaptcha(
+        my $res = $azc->decaptcha($filename_or_file_content) or die $azc->errstr;
+        my $res = $azc->decaptcha(
             $filename_or_file_content
             phrase => 1,
             language => 1, # check https://azcaptcha.com/setting
-        ) or die $w2c->errstr;
+        ) or die $azc->errstr;
 
         print "Got text as " . $res->{text} . "\n";
         if (0) {
-            $w2c->reportbad($res->{id}) or die $w2c->errstr;
+            $azc->reportbad($res->{id}) or die $azc->errstr;
         }
 
   upload
-        my $captcha_id = $w2c->upload($filename_or_file_content) or die $w2c->errstr;
-        my $captcha_id = $w2c->upload(
+        my $captcha_id = $azc->upload($filename_or_file_content) or die $azc->errstr;
+        my $captcha_id = $azc->upload(
             $filename_or_file_content
             phrase => 1,
             language => 1, # check https://azcaptcha.com/setting
-        ) or die $w2c->errstr;
+        ) or die $azc->errstr;
 
   get
-        my $text = $w2c->get($captcha_id) or die $w2c->errstr;
+        my $text = $azc->get($captcha_id) or die $azc->errstr;
 
   get_multi
-        my @texts = $w2c->get_multi($captcha_id1, $captcha_id2) or die $w2c->errstr;
+        my @texts = $azc->get_multi($captcha_id1, $captcha_id2) or die $azc->errstr;
 
   getbalance
-        my $b = $w2c->getbalance() or die $w2c->errstr;
+        my $b = $azc->getbalance() or die $azc->errstr;
         print "Balance: $b\n";
 
   reportbad
-        my $res = $w2c->reportbad($captcha_id) or die $w2c->errstr;
+        my $res = $azc->reportbad($captcha_id) or die $azc->errstr;
 
   getstats
-        my $res = $w2c->getstats($date) or die $w2c->errstr;
+        my $res = $azc->getstats($date) or die $azc->errstr;
 
   load
-        my $load = $w2c->load();
+        my $load = $azc->load();
 
   request
-        my $res = $w2c->request(action => 'getstats', date => $date);
+        my $res = $azc->request(action => 'getstats', date => $date);
 
     underlaying method to build request
 
