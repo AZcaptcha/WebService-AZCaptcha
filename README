@@ -1,11 +1,11 @@
 NAME
-    WebService::2Captcha - API 2Captcha.com
+    WebService::AZcaptcha - API azcaptcha.com
 
 SYNOPSIS
         use WebService::2Captcha;
 
         my $w2c = WebService::2Captcha->new(
-            key => '......', # from https://2captcha.com/setting
+            key => '......', # from https://azcaptcha.com/setting
         );
 
         my $b = $w2c->getbalance() or die $w2c->errstr;
@@ -18,7 +18,7 @@ SYNOPSIS
         }
 
 DESCRIPTION
-    WebService::2Captcha is for <https://2captcha.com/setting>
+    WebService::2Captcha is for <https://azcaptcha.com/setting>
 
 METHODS
   decaptcha
@@ -26,7 +26,7 @@ METHODS
         my $res = $w2c->decaptcha(
             $filename_or_file_content
             phrase => 1,
-            language => 1, # check https://2captcha.com/setting
+            language => 1, # check https://azcaptcha.com/setting
         ) or die $w2c->errstr;
 
         print "Got text as " . $res->{text} . "\n";
@@ -39,7 +39,7 @@ METHODS
         my $captcha_id = $w2c->upload(
             $filename_or_file_content
             phrase => 1,
-            language => 1, # check https://2captcha.com/setting
+            language => 1, # check https://azcaptcha.com/setting
         ) or die $w2c->errstr;
 
   get
